@@ -1,0 +1,885 @@
+@import 'normalize';
+
+$lineColor : #94d6d0;
+$bgColor: #fafafa;
+
+%s1Icon {
+    width: 16px;
+    height: 16px;
+}
+%s2Icon {
+    width: 12px;
+    height: 16px;
+}
+%s3Icon {
+    width: 14px;
+    height: 16px;
+}
+%s4Icon {
+    width: 14px;
+    height: 17px;
+}
+%s5Icon {
+    width: 14px;
+    height: 14px;
+}
+%s6Icon {
+    width: 12px;
+    height: 8px;
+}
+
+
+@mixin fontFamily1($text) {
+    @if ($text == en){
+        font-family: Athelas-Regular;
+    } @else {
+        font-family: SongtiSC-Regular;
+    }
+}
+
+@mixin fontFamily2($text) {
+    @if ($text == en){
+        font-family: Roboto-Regular;
+    } @else {
+        font-family: NotoSansCJKJP-Regular;
+    }
+}
+
+@mixin fontFamily3($text) {
+    @if ($text == bold){
+        font-family: NotoSansCJKTC-Bold;
+    } @else {
+        font-family: NotoSansCJKJP-Regular;
+    }
+}
+
+@mixin fontFamily4($text) {
+    @if ($text == bold){
+        font-family: Roboto-Bold;
+    } @else {
+        font-family: Roboto-Regular;
+    }
+}
+
+@mixin fontFamily5($text) {
+    @if ($text == areaTitle){
+        font-family: SongtiSC-Regular;
+    } @else {
+        font-family: Athelas-Regular;
+    }
+}
+
+%font1{
+    font-family: NotoSansCJKTC-Regular;
+    font-size: 12px;
+    color: #000;
+}
+
+%font2{
+    font-size: 14px;
+    color: #000;
+}
+
+%font3{
+    font-size: 40px;
+    line-height: 47.6px;
+    color: #000;
+}
+
+%font4{
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #000;
+}
+
+%font5{
+    font-size: 14px;
+    line-height: 21px;
+    color: #000;
+}
+
+%font6{
+    font-size: 33px;
+    line-height: 39.3px;
+    color: #000;
+}
+
+%font7{
+    font-size: 15px;
+    color: #000;
+}
+
+%font8 {
+    font-family: NotoSansCJKTC-Regular;
+    font-size: 33px;
+    color: #000;
+} 
+
+%font9 {
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: #000;
+}
+
+%font10 {
+    font-family: SongtiSC-Regular;
+    font-size: 17px;
+    color:#000;
+    line-height: 20.2px;
+}
+
+%enTxt {
+    @extend %font7;
+    @include fontFamily2(en);
+}
+%enTxt2 {
+    @extend %font7;
+    @include fontFamily4(bold);
+}
+
+%zhTxt {
+    @extend %font2;
+    @include fontFamily2(zh);
+}
+
+%zhTxt2 {
+    @extend %font2;
+    @include fontFamily3(bold);
+}
+
+%symbolTxt {
+    @extend %font2;
+    @include fontFamily4(bold);
+}
+
+%areaTitle {
+    @extend %font6;
+    @include fontFamily5(areaTitle);
+}
+
+.btn1{
+    width: 108px;
+    height: 40px;
+    border: solid 1px #000;
+    background-color: #fff;
+    @extend %font2;
+    @include fontFamily3(orignal);
+}
+
+.btn2{
+    width: 209px;
+    height: 40px;
+    border: solid 1px #000;
+    background-color: #fff;
+
+    .btnEnTxt{
+        @extend %enTxt;
+    }
+
+    .btnZhTxt{
+        @extend %zhTxt;
+    }
+}
+
+.btn3{
+    width: 136px;
+    height: 34px;
+    border: solid 1px #000;
+    background-color: #fff;
+    @extend %font2;
+    @include fontFamily3(orignal);
+    margin-top: 23px;
+}
+
+.mb11{
+    margin-bottom: 11px;
+}
+.mb13{
+    margin-bottom: 13px;
+}
+
+.bgGray{
+    background-color: $bgColor;
+}
+
+
+.header{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bolderLine {
+    width: 100%;
+    height: 4px;
+    background-color: $lineColor;
+}
+
+.orginalLine {
+    width: 95%;
+    height: 2px;
+    background-color: $lineColor;
+}
+.fullWdLine{
+    width: 100%;
+    height: 2px;
+    background-color: $lineColor;
+    margin-top: 12px;
+}
+
+.menu1{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .publicFunc{
+        display: flex;
+        .funcIcon{
+            width: 130px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 24px;
+
+            .search{
+                @extend %s1Icon;
+                background-image: url('../image/header/search.png');
+            }
+        
+            .address{
+                @extend %s2Icon;
+                background-image: url('../image/header/address.png');
+            }
+        
+            .service{
+                @extend %s1Icon;
+                background-image: url('../image/header/service.png');
+            }
+        }
+        .funcText{
+            margin-left: 10px;
+            @extend %font1;
+        }
+    }
+    
+
+    .logo{
+        width: 193px;
+        height: 24px;
+        background-image: url('../image/header/logo.png');
+        margin-right: 34px;
+    }
+
+    .memberFunc{
+        width: 131px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 26px;
+
+        .infoFunc{
+            width: 74px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .member{
+            @extend %s3Icon;
+            background-image: url('../image/header/member.png');
+        }
+        .keep{
+            @extend %s4Icon;
+            background-image: url('../image/header/keep.png');
+        }
+        .infoText{
+            @extend %font1;
+        }
+    }
+}
+
+.menu2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    .menu2func {
+        width: 636px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @extend %font2;
+        @include fontFamily3(bold);
+    }
+}
+
+.banner{
+    width: 100%;
+    height: 504.4px;
+    margin-top: 14px;
+    background-image: url('../image/banner/banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .bigEnTitle{
+        @include fontFamily1(en);
+        @extend %font3;
+    }
+    .bigZhTitle{
+        @include fontFamily1(zh);
+        @extend %font3;
+    }
+
+    .mdEnContent{
+        @include fontFamily2(en);
+        @extend %font4;
+    }
+    .mdZhContent{
+        @include fontFamily2(zh);
+        @extend %font5;
+    }
+
+    .bannerContainer{
+        width: 360px;
+        padding-top: 98px;
+        margin-left: 71px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .bannerContent{
+            margin-top: 11px;
+            margin-bottom: 21px;
+            font-size: 0px;
+        }
+    }
+}
+
+.btnArea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 68px;
+}
+
+.necessary,
+.news,
+.master,
+.classView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.experience {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+.homeBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 58px;
+
+    .homeBarTxt{
+        @extend %zhTxt2;
+    }
+}
+
+.arrow {
+    @extend %s5Icon;
+    background-image: url('../image/common_icon/arrow.png');
+    margin-left: 5px;
+}
+
+.dropDown {
+    @extend %s6Icon;
+    background-image: url('../image/common_icon/dropDown.png');
+    margin-left: 13px;
+    position: relative;
+    top: 5px;
+}
+
+.necessaryTitle{
+    margin-top: 98px;
+    margin-bottom: 27px;
+    @extend %areaTitle; 
+}
+
+@for $i from 1 through 12 {
+    .nessCol#{$i} {
+        width: 100%;
+        padding-bottom:100%;
+        background-size: cover;
+        @if ($i < 5){
+            background-image: url('../image/content/necessary/0#{$i}.png');
+        } @else if ($i < 10){
+            background-image: url('../image/content/necessary/0#{$i}.jpeg');
+        } @else {
+            background-image: url('../image/content/necessary/#{$i}.jpeg');
+        }
+        position: relative;
+    }
+}
+
+.keepFuncBar{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 24px;
+    position: absolute;
+    bottom: -5px;
+}
+.keepBtn{
+    @extend %s4Icon;
+    background-image: url('../image/common_icon/keep.png');
+    margin-right: 24px;
+}
+
+.owl-theme .owl-dots{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 103px;
+}
+
+.owl-theme .owl-dots button.owl-dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.owl-theme .owl-dots button.owl-dot.active {
+    background-color: $lineColor;
+}
+
+.owl-theme .owl-nav{
+    position: absolute;
+    left: 0;
+    top: calc((100% - 142px) / 2);
+    width: 100%;
+}
+
+.owl-theme .owl-nav button.owl-prev,
+.owl-theme .owl-nav button.owl-next{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    position: absolute;
+    transform: translate(0, -50%);
+    box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
+}
+
+.owl-theme .owl-nav button.owl-prev{
+    left: 0;
+}
+
+.owl-theme .owl-nav button.owl-prev span{
+    display: none;
+}
+
+.owl-theme .owl-nav button.owl-prev:after {
+        content: '';
+        background: url(../image/common_icon/arrow.png) no-repeat;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 40%;
+        left: 40%;
+        transform: rotate(180deg);
+}
+
+.owl-theme .owl-nav button.owl-next{
+    right: 0;
+}
+
+.owl-theme .owl-nav button.owl-next span{
+    display: none;
+}
+
+.owl-theme .owl-nav button.owl-next:after {
+        content: '';
+        background: url(../image/common_icon/arrow.png) no-repeat;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 40%;
+        left: 40%;
+}
+
+
+
+.newsTitle{
+    margin-top: 63px;
+    margin-bottom: 24px;
+    @extend %areaTitle; 
+}
+
+.newsGrid{
+    width: 90%;
+    height: 0;
+    padding-bottom: 29%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @for $i from 1 through 3 {
+        .newsCol#{$i} {
+            width: 32%;
+            padding-bottom:29%;
+            background-size: cover;
+            background-image: url('../image/content/news/news_#{$i}.png');
+            position: relative;
+        }
+    }
+
+    .newsContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 55%;
+
+        .btnNewsMore{
+            display: inline-flex;
+            margin-bottom: 94px;
+        }
+        .newsEnTxt{
+            @extend %enTxt2;
+        }
+        .newsSymbolTxt{
+            @extend %symbolTxt;
+        }
+        .newsZhTxt{
+            @extend %zhTxt2;
+        }
+    
+        .newsSubContent{
+            margin-bottom: 18px;
+        }
+    }
+
+}
+
+.masterTitle{
+    margin-top: 34px;
+    margin-bottom: 43px;
+    @extend %areaTitle; 
+}
+
+.masterGrid{
+    width: 80%;
+    height: 0;
+    padding-bottom: 45.7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    li{
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+       width:30%;  
+       padding-bottom: 30%;
+       
+       .storeTitle{
+           @extend %font6;
+           @include fontFamily5(storeTitle);
+           margin-top: 21px;
+       }
+
+       img {
+         width: 517px;
+         height: 646px;
+       }
+
+       .btnStoreMore{
+            display: inline-flex;
+            margin-top: 14px;
+            margin-bottom: 29px;
+
+            .masterZhTxt{
+                @extend %zhTxt2;
+            }
+        }
+    }
+}
+
+.classViewTitle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @extend %font8; 
+}
+
+.classViewZhTxt{
+    @extend %zhTxt2;
+}
+.classViewEnTxt{
+    @extend %enTxt2;
+}
+
+.classViewContent{
+    font-size: 0;
+    margin-bottom: 33px;    
+}
+
+.classViewRow{
+    width: 90%;
+    height: 0;
+    padding-bottom: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @for $i from 1 through 6 {
+        .cViewCol#{$i} {
+            width: 15%;
+            padding-bottom: 15%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../image/content/classView/0#{$i}.png');
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            position: relative;
+
+            span{
+                position: absolute;
+                top: 105%;
+            }
+        }
+    }
+}
+
+.represent{
+    width: 100%;
+    height: 0;
+    padding-bottom: 30%;
+    background-image: url('../image/content/represent/banner_2.png');
+    background-size: cover;
+    background-position: unset;
+    background-repeat: no-repeat;
+
+    .repContainer{
+        width: 360px;
+        padding-top: 193px;
+        margin-left: 117px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .repTitle{
+            @extend %font6;
+            @include fontFamily5(repTitle);
+            letter-spacing: 1.65px;
+        }
+        .repZhTxt{
+            @extend %zhTxt;
+        }
+        .repZhBTxt{
+            @extend %zhTxt2;
+        }
+        .repEnTxt{
+            @extend %enTxt2;
+        }
+        .repContent{
+            font-size: 0;
+            margin-top: 14px;
+        }
+        .btnRepMore{
+            display: inline-flex;
+            margin-top: 19px;
+        }
+    }
+}
+
+.expTitle{
+    padding-top: 21px;
+    padding-bottom: 82px;
+}
+
+.expZhTitle{
+    @extend %areaTitle; 
+    letter-spacing: -1.65px;
+}
+
+.expEnTitle{
+    @include fontFamily5(expEnTitle);
+    @extend %font6;
+    letter-spacing: -1.65px;
+}
+
+.expZhTxt{
+    @extend %zhTxt;
+}
+
+.expEnTxt{
+    @extend %enTxt;
+}
+
+$experience: serviceBig calendar gift;
+@mixin expIcons {
+    @each $i in $experience {
+        .#{$i}Icon {
+            width: 56px;
+            height: 56px;
+            background-image: url('../image/content/experience/#{$i}.png');
+        }
+    }
+} 
+
+.expGrid{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 215px;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        &:nth-child(1){
+            margin-left: 44px;
+        }
+        &:nth-child(2){
+            margin-left: 178px;
+        }
+        &:nth-child(3){
+            margin-left: 127px;
+        }
+
+        .btnExpMore{
+            display: inline-flex;
+            margin-top: 17px;
+        }
+
+        .expRow{
+            margin-top: 12px;
+            font-size: 0;
+        }
+    }
+
+    @include expIcons;
+}
+
+.ftMZhTxt{
+    @extend %zhTxt;
+}
+.ftMEnTxt{
+    @extend %enTxt;
+}
+.ftSZhTxt{
+    @extend %font1;
+}
+.ftSEnTxt{
+    @extend %font9
+}
+.ftYearTxt{
+    @extend %font10
+}
+
+.ftTopArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .ftTitle{
+        margin-top: 25px;
+        margin-bottom: 26px;
+    }
+
+    .ftContent{
+        margin-bottom: 16px;
+    }
+
+    .ftLeftArea{
+        width: 47%;
+        height: 0;
+        padding-bottom: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 40px;
+
+        .ftCol{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+
+    .ftRightArea{
+        width: 17%;
+        height: 0;
+        padding-bottom: 12%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 56px;
+
+        .mailTxt{
+            margin-top: 24px;
+            z-index: 1;
+        }
+        .inputEmail{
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #000;
+            position: relative;
+            top: -12px;
+        }
+
+    }
+}
+
+$socialApp: Instagram Facebook Pinterest Twitter YouTube Line;
+    @mixin socialAppIcons {
+        @each $i in $socialApp {
+            .icon#{$i} {
+                @extend %s1Icon;
+                background-image: url('../image/footer/#{$i}.png');
+            }
+        }
+ } 
+
+.ftDownArea{
+    width: 94.5%;
+    height: 0;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-top: 57px;
+
+    .btnSelectArea{
+        display: inline-flex;
+    }
+
+    .ccTextArea{
+        margin-left: 50px;
+    }
+
+    .iconAlign{
+        width: 16.4%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 30px;
+        box-sizing: border-box;
+
+        @include socialAppIcons;
+    }
+}
