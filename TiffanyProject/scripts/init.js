@@ -98,7 +98,7 @@ function mobileEvent(){
         endx = e.changedTouches[0].pageX;
         endy = e.changedTouches[0].pageY;
         var direction = getDirection(startx, starty, endx, endy);
-        if(direction === 3 || direction === 4){
+        if(direction === 0 || direction === 3 || direction === 4){
             setTimeout(function(){ isShowNavPrevBtn(); }, 300);
         }
     })
