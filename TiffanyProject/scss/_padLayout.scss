@@ -1,0 +1,293 @@
+@media(max-width:768px){
+    .menu1 {
+      width: 96%;
+      .memberFunc .infoFunc {
+          display: none;
+      }
+
+      .publicFunc {
+          flex: 2;
+          .funcIcon {
+              justify-content: flex-start;
+              align-items: center;
+              margin-left: 0;
+
+              .address, .service {
+                  display: none;
+              }
+              .search {
+                  margin-left: 16px;
+              }        
+
+              .button-toggle {
+                  display: block;
+              }
+          }
+
+          .funcText {
+              display: none;
+          }
+      }
+      
+      .logo {
+          margin-right: 0;
+          flex: 1;
+      }
+
+      .memberFunc {
+          flex: 2;
+          justify-content: flex-end;
+          margin-right: 0px;
+      }
+    }
+
+    .menu2 {
+      width: 100%;
+      .menu2func {
+          display: none;
+      }
+
+      .menu2func.active {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+
+          li { 
+              display: block;
+              padding: 10px 0;
+              margin-left: 20px;
+          }
+      }
+    }
+
+    .banner {
+      height: 750px;
+      margin-top: -10px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .bannerContainer {
+          padding-top: 0;
+          margin-left: 0;
+          position: absolute;
+          top: 101%;
+          width: 60%;
+          align-items: center;
+          text-align: center;
+  
+          .bannerContent {
+            width: 75%;
+          }
+
+          .btn1 {
+              margin-top: -10px;
+          }
+        }
+    }
+
+    .container {
+        margin-top: 12%;
+
+        .necessaryTitle,
+        .no-js .owl-carousel, .owl-carousel.owl-loaded,
+        .newsTitle,
+        .classViewTitle,
+        .classViewContent {
+            width: 96%;
+        }
+
+        .owl-carousel .owl-stage-outer {
+          overflow-x: clip;
+          overflow-y: visible;
+        }
+
+        .owl-theme .owl-nav {
+            top: calc((100% - 8px) / 2);
+        }
+
+        .nessText {
+          display: block;
+          position: absolute;
+          top: 102%;
+        }
+
+        .btnArea {
+          margin-top: 50px;
+        }
+
+        .newsTitle{
+          margin-top: 33px;      
+        }
+
+        .newsContainer {
+          width: 96%;
+          padding-bottom: 50%;
+
+          @for $i from 1 through 3 {
+              .newsCol#{$i} {
+                  padding-bottom:36%;
+              }
+          }
+
+          .newsContent{
+              padding-left: 5px;
+              padding-right: 5px;
+              padding-top: 12px;
+
+              .newsSubContent{
+                  line-height: 1.4;
+                  margin-bottom: 6px;
+              }
+
+              .mb11, .mb13{
+                  line-height: 1.4;
+                  margin-bottom: 0;
+              }
+          }
+        }
+
+        .masterTitle{
+            margin-top: 10px;
+        }
+
+        .masterContainer{
+            width: 96%;
+            flex-direction: column;
+
+            .masterItem{
+                width: 100%;
+                padding: 0;
+
+                .storeTitle, .btnStoreMore{
+                    width: 100%;
+                }
+            }
+        }
+
+        .classViewRow{
+            width: 96%;
+            flex-wrap: wrap;
+            padding-bottom: 165%;
+
+            @for $i from 1 through 6 {
+              .cViewCol#{$i} {
+                  width: 48%;
+                  padding-bottom: 48%;
+                  @if ($i > 2){
+                      margin-top: 50px;
+                  }
+
+                  span {
+                      width: 100%;
+                  }
+              }
+            }
+        }
+    }
+
+    .represent {
+        padding-bottom: 0;
+        height: 460px;
+        background-position: right bottom;
+
+        .repBorder {
+            display: flex;
+            justify-content: center;
+        }
+
+        .repContainer{
+            padding-top: 0;
+            margin-left: 0;
+            width: 96%;
+            top: 115%;
+        }
+    }
+
+    .experience {
+        margin-top: 200px;
+
+        .expContainer {
+          margin-bottom: 215px;
+          flex-direction: column;
+          justify-content: center;
+
+          .expItem {
+              margin-left: 0;
+
+              &:not(:first-child) {
+                  margin-top: 400px;
+              }
+
+              .expRow:first-of-type{
+                  margin-top: 50px;
+              }
+
+              @each $i in $experience {
+                  .#{$i}Icon {
+                      width: 100px;
+                      height: 100px;
+                  }
+              }
+          }
+        }
+    }
+
+    .fullWdLine {
+       margin-top: 0;
+    }
+
+    .ftTopArea{
+      justify-content: center;
+      .ftLeftArea{
+          width: 96%;
+          padding-bottom: 5%;
+          height: auto;
+          margin-left: 0;
+
+          .ftCol:first-child{
+              .ftContent {
+                  margin-left: 24px;
+                  &:last-of-type {
+                      display: block;
+                  }
+              }
+          }
+
+          .ftCol:not(:first-child) {
+              display: none;
+          }
+      }
+
+      .ftRightArea{
+          display: none;
+      }
+    }
+
+    .ftDownArea{
+      width: 100%;
+      padding-bottom: 36%;
+      height: auto;
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .btnSelectArea{
+          width: 96%;
+      }
+
+      .ccTextArea{
+          position: absolute;
+          top: 40%;
+      }
+
+      .iconAlign{
+          width: 80%;
+          position: absolute;
+          top: 20%;
+      }
+    } 
+}

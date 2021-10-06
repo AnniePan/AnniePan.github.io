@@ -1,229 +1,10 @@
 @import 'normalize';
-
-$lineColor : #94d6d0;
-$bgColor: #fafafa;
-
-%s1Icon {
-    width: 16px;
-    height: 16px;
-}
-%s2Icon {
-    width: 12px;
-    height: 16px;
-}
-%s3Icon {
-    width: 14px;
-    height: 16px;
-}
-%s4Icon {
-    width: 14px;
-    height: 17px;
-}
-%s5Icon {
-    width: 14px;
-    height: 14px;
-}
-%s6Icon {
-    width: 12px;
-    height: 8px;
-}
-
-
-@mixin fontFamily1($text) {
-    @if ($text == en){
-        font-family: Athelas-Regular;
-    } @else {
-        font-family: SongtiSC-Regular;
-    }
-}
-
-@mixin fontFamily2($text) {
-    @if ($text == en){
-        font-family: Roboto-Regular;
-    } @else {
-        font-family: NotoSansCJKJP-Regular;
-    }
-}
-
-@mixin fontFamily3($text) {
-    @if ($text == bold){
-        font-family: NotoSansCJKTC-Bold;
-    } @else {
-        font-family: NotoSansCJKJP-Regular;
-    }
-}
-
-@mixin fontFamily4($text) {
-    @if ($text == bold){
-        font-family: Roboto-Bold;
-    } @else {
-        font-family: Roboto-Regular;
-    }
-}
-
-@mixin fontFamily5($text) {
-    @if ($text == areaTitle){
-        font-family: SongtiSC-Regular;
-    } @else {
-        font-family: Athelas-Regular;
-    }
-}
-
-%font1{
-    font-family: NotoSansCJKTC-Regular;
-    font-size: 12px;
-    color: #000;
-}
-
-%font2{
-    font-size: 14px;
-    color: #000;
-}
-
-%font3{
-    font-size: 40px;
-    line-height: 47.6px;
-    color: #000;
-}
-
-%font4{
-    font-size: 15px;
-    line-height: 22.5px;
-    color: #000;
-}
-
-%font5{
-    font-size: 14px;
-    line-height: 21px;
-    color: #000;
-}
-
-%font6{
-    font-size: 33px;
-    line-height: 39.3px;
-    color: #000;
-}
-
-%font7{
-    font-size: 15px;
-    color: #000;
-}
-
-%font8 {
-    font-family: NotoSansCJKTC-Regular;
-    font-size: 33px;
-    color: #000;
-} 
-
-%font9 {
-    font-family: Roboto-Regular;
-    font-size: 12px;
-    color: #000;
-}
-
-%font10 {
-    font-family: SongtiSC-Regular;
-    font-size: 17px;
-    color:#000;
-    line-height: 20.2px;
-}
-
-%enTxt {
-    @extend %font7;
-    @include fontFamily2(en);
-}
-%enTxt2 {
-    @extend %font7;
-    @include fontFamily4(bold);
-}
-
-%zhTxt {
-    @extend %font2;
-    @include fontFamily2(zh);
-}
-
-%zhTxt2 {
-    @extend %font2;
-    @include fontFamily3(bold);
-}
-
-%symbolTxt {
-    @extend %font2;
-    @include fontFamily4(bold);
-}
-
-%areaTitle {
-    @extend %font6;
-    @include fontFamily5(areaTitle);
-}
-
-.btn1{
-    width: 108px;
-    height: 40px;
-    border: solid 1px #000;
-    background-color: #fff;
-    @extend %font2;
-    @include fontFamily3(orignal);
-}
-
-.btn2{
-    width: 209px;
-    height: 40px;
-    border: solid 1px #000;
-    background-color: #fff;
-
-    .btnEnTxt{
-        @extend %enTxt;
-    }
-
-    .btnZhTxt{
-        @extend %zhTxt;
-    }
-}
-
-.btn3{
-    width: 136px;
-    height: 34px;
-    border: solid 1px #000;
-    background-color: #fff;
-    @extend %font2;
-    @include fontFamily3(orignal);
-    margin-top: 23px;
-}
-
-.mb11{
-    margin-bottom: 11px;
-}
-.mb13{
-    margin-bottom: 13px;
-}
-
-.bgGray{
-    background-color: $bgColor;
-}
-
+@import 'setting';
 
 .header{
-    width: 100%;
-    margin: 0 auto;
-}
-
-.bolderLine {
-    width: 100%;
-    height: 4px;
-    background-color: $lineColor;
-}
-
-.orginalLine {
-    width: 95%;
-    height: 2px;
-    background-color: $lineColor;
-}
-.fullWdLine{
-    width: 100%;
-    height: 2px;
-    background-color: $lineColor;
-    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu1{
@@ -269,6 +50,9 @@ $bgColor: #fafafa;
         width: 193px;
         height: 24px;
         background-image: url('../image/header/logo.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
         margin-right: 34px;
     }
 
@@ -314,7 +98,6 @@ $bgColor: #fafafa;
 }
 
 .banner{
-    width: 100%;
     height: 504.4px;
     margin-top: 14px;
     background-image: url('../image/banner/banner.png');
@@ -362,10 +145,7 @@ $bgColor: #fafafa;
     margin-bottom: 68px;
 }
 
-.necessary,
-.news,
-.master,
-.classView {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -377,6 +157,12 @@ $bgColor: #fafafa;
     align-items: center;
     flex-direction: column;
     margin-top: 120px;
+
+    .expContainer {
+        margin-bottom: 215px;
+        display: flex;
+        justify-content: flex-start;
+    }
 }
 
 .homeBar {
@@ -391,24 +177,14 @@ $bgColor: #fafafa;
     }
 }
 
-.arrow {
-    @extend %s5Icon;
-    background-image: url('../image/common_icon/arrow.png');
-    margin-left: 5px;
-}
-
-.dropDown {
-    @extend %s6Icon;
-    background-image: url('../image/common_icon/dropDown.png');
-    margin-left: 13px;
-    position: relative;
-    top: 5px;
-}
-
 .necessaryTitle{
     margin-top: 98px;
     margin-bottom: 27px;
     @extend %areaTitle; 
+}
+
+.nessText {
+    display: none;
 }
 
 @for $i from 1 through 12 {
@@ -449,15 +225,16 @@ $bgColor: #fafafa;
 }
 
 .owl-theme .owl-dots button.owl-dot {
-    width: 15px;
-    height: 15px;
-    margin: 0 4px;
+    width: 10px;
+    height: 10px;
+    margin: 0 8px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #fff;
+    border: 1px solid $dotColor;
 }
 
 .owl-theme .owl-dots button.owl-dot.active {
-    background-color: $lineColor;
+    background-color: $dotColor;
 }
 
 .owl-theme .owl-nav{
@@ -514,58 +291,60 @@ $bgColor: #fafafa;
         left: 40%;
 }
 
-
-
 .newsTitle{
     margin-top: 63px;
     margin-bottom: 24px;
     @extend %areaTitle; 
 }
 
-.newsGrid{
+.newsContainer{
     width: 90%;
     height: 0;
     padding-bottom: 29%;
+}
+
+.no-js .newsRow.owl-carousel,
+.newsRow.owl-carousel.owl-loaded {
+    display: none;
+}
+
+@for $i from 1 through 3 {
+    .newsCol#{$i} {
+        width: 32%;
+        padding-bottom:29%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../image/content/news/news_#{$i}.png');
+        position: relative;
+    }
+}
+
+.newsContent{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 55%;
+    text-align: center;
 
-    @for $i from 1 through 3 {
-        .newsCol#{$i} {
-            width: 32%;
-            padding-bottom:29%;
-            background-size: cover;
-            background-image: url('../image/content/news/news_#{$i}.png');
-            position: relative;
-        }
+    .btnNewsMore{
+        display: inline-flex;
+        margin-bottom: 94px;
+    }
+    .newsEnTxt{
+        @extend %enTxt2;
+    }
+    .newsSymbolTxt{
+        @extend %symbolTxt;
+    }
+    .newsZhTxt{
+        @extend %zhTxt2;
     }
 
-    .newsContent{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 55%;
-
-        .btnNewsMore{
-            display: inline-flex;
-            margin-bottom: 94px;
-        }
-        .newsEnTxt{
-            @extend %enTxt2;
-        }
-        .newsSymbolTxt{
-            @extend %symbolTxt;
-        }
-        .newsZhTxt{
-            @extend %zhTxt2;
-        }
-    
-        .newsSubContent{
-            margin-bottom: 18px;
-        }
+    .newsSubContent{
+        margin-bottom: 18px;
     }
-
 }
 
 .masterTitle{
@@ -574,44 +353,39 @@ $bgColor: #fafafa;
     @extend %areaTitle; 
 }
 
-.masterGrid{
+.masterContainer {
     width: 80%;
-    height: 0;
-    padding-bottom: 45.7%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 
-    li{
-       display: flex;
-       flex-direction: column;
-       justify-content: flex-start;
-       align-items: center;
-       width:30%;  
-       padding-bottom: 30%;
-       
-       .storeTitle{
-           @extend %font6;
-           @include fontFamily5(storeTitle);
-           margin-top: 21px;
-       }
-
-       img {
-         width: 517px;
-         height: 646px;
-       }
-
-       .btnStoreMore{
-            display: inline-flex;
-            margin-top: 14px;
-            margin-bottom: 29px;
-
-            .masterZhTxt{
-                @extend %zhTxt2;
-            }
+    .masterItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%; 
+        padding: 0 48px; 
+        
+        .storeTitle{
+            @extend %font6;
+            @include fontFamily5(storeTitle);
+            margin-top: 21px;
         }
-    }
+    
+        img {
+           width: 100%;
+        }
+    
+        .btnStoreMore{
+             display: inline-flex;
+             margin-top: 14px;
+             margin-bottom: 29px;
+    
+             .masterZhTxt{
+                 @extend %zhTxt2;
+             }
+         }
+     }
 }
+
 
 .classViewTitle{
     margin-top: 20px;
@@ -643,7 +417,7 @@ $bgColor: #fafafa;
         .cViewCol#{$i} {
             width: 15%;
             padding-bottom: 15%;
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-image: url('../image/content/classView/0#{$i}.png');
@@ -661,13 +435,13 @@ $bgColor: #fafafa;
 }
 
 .represent{
-    width: 100%;
     height: 0;
     padding-bottom: 30%;
     background-image: url('../image/content/represent/banner_2.png');
     background-size: cover;
     background-position: unset;
     background-repeat: no-repeat;
+    position: relative;
 
     .repContainer{
         width: 360px;
@@ -676,6 +450,9 @@ $bgColor: #fafafa;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
 
         .repTitle{
             @extend %font6;
@@ -733,60 +510,39 @@ $experience: serviceBig calendar gift;
             width: 56px;
             height: 56px;
             background-image: url('../image/content/experience/#{$i}.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
 } 
 
-.expGrid{
+.expItem {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 215px;
-
-    li {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        &:nth-child(1){
-            margin-left: 44px;
-        }
-        &:nth-child(2){
-            margin-left: 178px;
-        }
-        &:nth-child(3){
-            margin-left: 127px;
-        }
-
-        .btnExpMore{
-            display: inline-flex;
-            margin-top: 17px;
-        }
-
-        .expRow{
-            margin-top: 12px;
-            font-size: 0;
-        }
-    }
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     @include expIcons;
-}
 
-.ftMZhTxt{
-    @extend %zhTxt;
-}
-.ftMEnTxt{
-    @extend %enTxt;
-}
-.ftSZhTxt{
-    @extend %font1;
-}
-.ftSEnTxt{
-    @extend %font9
-}
-.ftYearTxt{
-    @extend %font10
+    &:nth-child(1){
+        margin-left: 44px;
+    }
+    &:nth-child(2){
+        margin-left: 178px;
+    }
+    &:nth-child(3){
+        margin-left: 127px;
+    }
+
+    .btnExpMore{
+        display: inline-flex;
+        margin-top: 17px;
+    }
+
+    .expRow{
+        margin-top: 12px;
+        font-size: 0;
+    }
 }
 
 .ftTopArea{
@@ -816,6 +572,10 @@ $experience: serviceBig calendar gift;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+
+            &:first-of-type .ftContent:last-of-type {
+                display: none;
+            }
         }
     }
 
@@ -855,31 +615,41 @@ $socialApp: Instagram Facebook Pinterest Twitter YouTube Line;
  } 
 
 .ftDownArea{
-    width: 94.5%;
-    height: 0;
     padding-bottom: 3%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 40px;
     margin-top: 57px;
+    padding-left: 40px;
+    padding-right: 40px;
 
     .btnSelectArea{
         display: inline-flex;
+        flex: 1;
     }
 
     .ccTextArea{
-        margin-left: 50px;
+        flex: 3;
+        text-align: center;
     }
 
     .iconAlign{
-        width: 16.4%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-right: 30px;
-        box-sizing: border-box;
-
+        flex: 1;
         @include socialAppIcons;
     }
 }
+
+.button-toggle {
+    display: none;
+    width: 22px;
+    height: 22px;
+    transition: all .3s;
+    background-image: url('../image/common_icon/nav.svg');
+    background-position: center;
+}
+
+@import 'padLayout';
+@import 'phoneLayout';

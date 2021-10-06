@@ -1,0 +1,290 @@
+
+$lineColor : #94d6d0;
+$bgColor: #fafafa;
+$dotColor: #000000;
+
+%s1Icon {
+    width: 16px;
+    height: 16px;
+}
+%s2Icon {
+    width: 12px;
+    height: 16px;
+}
+%s3Icon {
+    width: 14px;
+    height: 16px;
+}
+%s4Icon {
+    width: 14px;
+    height: 17px;
+}
+%s5Icon {
+    width: 14px;
+    height: 14px;
+}
+%s6Icon {
+    width: 12px;
+    height: 8px;
+}
+
+
+@mixin fontFamily1($text) {
+    @if ($text == en){
+        font-family: Athelas-Regular;
+    } @else {
+        font-family: SongtiSC-Regular;
+    }
+}
+
+@mixin fontFamily2($text) {
+    @if ($text == en){
+        font-family: Roboto-Regular;
+    } @else {
+        font-family: NotoSansCJKJP-Regular;
+    }
+}
+
+@mixin fontFamily3($text) {
+    @if ($text == bold){
+        font-family: NotoSansCJKTC-Bold;
+    } @else {
+        font-family: NotoSansCJKJP-Regular;
+    }
+}
+
+@mixin fontFamily4($text) {
+    @if ($text == bold){
+        font-family: Roboto-Bold;
+    } @else {
+        font-family: Roboto-Regular;
+    }
+}
+
+@mixin fontFamily5($text) {
+    @if ($text == areaTitle){
+        font-family: SongtiSC-Regular;
+    } @else {
+        font-family: Athelas-Regular;
+    }
+}
+
+%font1{
+    font-family: NotoSansCJKTC-Regular;
+    font-size: 12px;
+    color: #000;
+}
+
+%font2{
+    font-size: 14px;
+    color: #000;
+}
+
+%font3{
+    font-size: 40px;
+    line-height: 47.6px;
+    color: #000;
+}
+
+%font4{
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #000;
+}
+
+%font5{
+    font-size: 14px;
+    line-height: 21px;
+    color: #000;
+}
+
+%font6{
+    font-size: 33px;
+    line-height: 39.3px;
+    color: #000;
+}
+
+%font7{
+    font-size: 15px;
+    color: #000;
+}
+
+%font8 {
+    font-family: NotoSansCJKTC-Regular;
+    font-size: 33px;
+    color: #000;
+} 
+
+%font9 {
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: #000;
+}
+
+%font10 {
+    font-family: SongtiSC-Regular;
+    font-size: 17px;
+    color:#000;
+    line-height: 20.2px;
+}
+
+%font11 {
+    font-size: 12px;
+    color:#000;
+}
+
+%enTxt {
+    @extend %font7;
+    @include fontFamily2(en);
+}
+%enTxt2 {
+    @extend %font7;
+    @include fontFamily4(bold);
+}
+%enTxt3 {
+    @extend %font11;
+    @include fontFamily2(en);
+}
+
+%zhTxt {
+    @extend %font2;
+    @include fontFamily2(zh);
+}
+%zhTxt2 {
+    @extend %font2;
+    @include fontFamily3(bold);
+}
+%zhTxt3 {
+    @extend %font11;
+    @include fontFamily2(zh);
+}
+
+%symbolTxt {
+    @extend %font2;
+    @include fontFamily4(bold);
+}
+
+%areaTitle {
+    @extend %font6;
+    @include fontFamily5(areaTitle);
+}
+
+.btn1{
+    width: 108px;
+    height: 40px;
+    border: solid 1px #000;
+    background-color: #fff;
+    @extend %font2;
+    @include fontFamily3(orignal);
+}
+
+.btn2{
+    width: 209px;
+    height: 40px;
+    border: solid 1px #000;
+    background-color: #fff;
+
+    .btnEnTxt{
+        @extend %enTxt;
+    }
+
+    .btnZhTxt{
+        @extend %zhTxt;
+    }
+}
+
+.btn3{
+    width: 136px;
+    height: 34px;
+    border: solid 1px #000;
+    background-color: #fff;
+    @extend %font2;
+    @include fontFamily3(orignal);
+    margin-top: 23px;
+}
+
+.mb11{
+    margin-bottom: 11px;
+}
+.mb13{
+    margin-bottom: 13px;
+}
+
+.bgGray{
+    background-color: $bgColor;
+}
+
+.nessZhTxt{
+    @extend %zhTxt3;
+}
+.nessEnTxt{
+    @extend %enTxt3;
+}
+.ftMZhTxt{
+    @extend %zhTxt;
+}
+.ftMEnTxt{
+    @extend %enTxt;
+}
+.ftSZhTxt{
+    @extend %font1;
+}
+.ftSEnTxt{
+    @extend %font9
+}
+.ftYearTxt{
+    @extend %font10
+}
+
+.bolderLine {
+    width: 100%;
+    height: 4px;
+    background-color: $lineColor;
+}
+
+.orginalLine {
+    width: 95%;
+    height: 2px;
+    background-color: $lineColor;
+}
+.fullWdLine{
+    width: 100%;
+    height: 2px;
+    background-color: $lineColor;
+    margin-top: 12px;
+}
+
+.arrow {
+    @extend %s5Icon;
+    background-image: url('../image/common_icon/arrow.png');
+    margin-left: 5px;
+}
+
+.dropDown {
+    @extend %s6Icon;
+    background-image: url('../image/common_icon/dropDown.png');
+    margin-left: 13px;
+    position: relative;
+    top: 5px;
+}
+
+.d-flex{
+    display: flex;
+ }
+ 
+ .jcFs{
+    justify-content: flex-start;
+ }
+ 
+ .jcSa{
+    justify-content: space-around;
+ }
+ 
+ .jcSb{
+    justify-content: space-between;
+ }
+ 
+ .w360{
+     width: 360px;
+ }
+
