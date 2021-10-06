@@ -63,7 +63,7 @@
     </div>
     <div class="container">
         <h1 class="necessaryTitle">必備款式</h1>            
-        <div class="necessaryRow owl-carousel owl-theme">
+        <div id="necessaryArea" class="necessaryRow owl-carousel owl-theme">
             <div>
                 <div class="nessCol1">
                     <div class="keepFuncBar">
@@ -537,48 +537,5 @@
 </body>
 <script src="vendor/jquery-3.5.1/jquery-3.5.1.min.js"></script>
 <script src="vendor/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.necessaryRow').owlCarousel({
-            responsiveClass:true,
-            responsive:{
-                320:{
-                    items: 2,
-                    nav: false,
-                    dots: false,
-                    margin: 10
-                },
-                768:{
-                    items: 3,
-                    nav: true,
-                    dots: false,
-                    margin: 10
-                },
-                1000:{
-                    items: 4,
-                    nav: true,
-                    dots: true,
-                    margin: 20
-                }
-            }
-        })
-
-        $('.newsRow').owlCarousel({
-            responsiveClass:true,
-            responsive:{
-                320:{
-                    items: 1,
-                    nav: false,
-                    dots: true,
-                    margin: 10
-                }
-            }
-        })
-
-        $('.button-toggle').click(function(e){
-            e.preventDefault();
-            $('.menu2func').toggleClass('active');
-        });
-    })
-</script>
+<script src="scripts/init.js"></script>
 </html>

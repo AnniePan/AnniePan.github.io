@@ -651,5 +651,9 @@ $socialApp: Instagram Facebook Pinterest Twitter YouTube Line;
     background-position: center;
 }
 
+.necessaryRow .owl-prev{
+    display: none;
+}
+
 @import 'padLayout';
 @import 'phoneLayout';
