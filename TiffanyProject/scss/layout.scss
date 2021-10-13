@@ -312,7 +312,7 @@
     .newsCol#{$i} {
         width: 32%;
         padding-bottom:29%;
-        background-size: contain;
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-image: url('../image/content/news/news_#{$i}.png');
@@ -330,7 +330,6 @@
 
     .btnNewsMore{
         display: inline-flex;
-        margin-bottom: 94px;
     }
     .newsEnTxt{
         @extend %enTxt2;
@@ -521,6 +520,7 @@ $experience: serviceBig calendar gift;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 
     @include expIcons;
 
@@ -561,8 +561,6 @@ $experience: serviceBig calendar gift;
 
     .ftLeftArea{
         width: 47%;
-        height: 0;
-        padding-bottom: 10%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -581,8 +579,6 @@ $experience: serviceBig calendar gift;
 
     .ftRightArea{
         width: 17%;
-        height: 0;
-        padding-bottom: 12%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
